@@ -158,8 +158,6 @@ public class frmCarro extends javax.swing.JFrame {
 
         jLabel6.setText("A:");
 
-        txtAce1.setText("2");
-
         jLabel7.setText("1m = 1 pixel");
 
         jLabel8.setText("1segundo = 10 milisegundos reales");
@@ -257,7 +255,7 @@ public class frmCarro extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(txtAce, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
@@ -273,8 +271,8 @@ public class frmCarro extends javax.swing.JFrame {
         btnIniciar.setEnabled(true);
     }
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-        try {
-            if(Integer.parseInt(txtAce.getText())<=0 || Integer.parseInt(txtAce1.getText())<=0){
+        //try {
+            if(Double.parseDouble(txtAce.getText())<=0 || Double.parseDouble(txtAce1.getText())<=0){
                 JOptionPane.showMessageDialog(null, "Ingrese aceleracion mayor a 0");
             }
             else{
@@ -285,9 +283,9 @@ public class frmCarro extends javax.swing.JFrame {
                 c = new Carro(this, carro, carro1);
                 c.start();
             }
-        } catch (Exception e) {
+        /*} catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ingrese valores a todos los campos");
-        }
+        }*/
         
         
     }//GEN-LAST:event_btnIniciarActionPerformed
@@ -301,7 +299,7 @@ public class frmCarro extends javax.swing.JFrame {
     private void btnReanudarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReanudarActionPerformed
         c.resume();
         btnPausar.setEnabled(true);
-        btnReanudar.setEnabled(true);
+        btnReanudar.setEnabled(false);
     }//GEN-LAST:event_btnReanudarActionPerformed
 
     /**

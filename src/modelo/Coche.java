@@ -12,14 +12,14 @@ package modelo;
  */
 public class Coche {
 
-    private int x;
-    private int x1;
-    private int v;
-    private int v1;
-    private int a;
-    private int a1;
+    private double x;
+    private double x1;
+    private double v;
+    private double v1;
+    private double a;
+    private double a1;
 
-    public Coche(int x, int x1, int v, int v1, int a, int a1) {
+    public Coche(double x, double x1, double v, double v1, double a, double a1) {
         this.x = x;
         this.x1 = x1;
         this.v = v;
@@ -28,50 +28,54 @@ public class Coche {
         this.a1 = a1;
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(double x) {
         this.x = x;
     }
 
-    public int getX1() {
+    public double getX1() {
         return x1;
     }
 
-    public void setX1(int x1) {
+    public void setX1(double x1) {
         this.x1 = x1;
     }
 
-    public int getV() {
+    public double getV() {
         return v;
     }
 
-    public void setV(int v) {
+    public void setV(double v) {
         this.v = v;
     }
 
-    public int getV1() {
+    public double getV1() {
         return v1;
     }
 
-    public void setV1(int v1) {
+    public void setV1(double v1) {
         this.v1 = v1;
     }
 
-    public int getA() {
+    public double getA() {
         return a;
     }
 
-    public void setA(int a) {
+    public void setA(double a) {
         this.a = a;
     }
 
-    public int getA1() {
+    public double getA1() {
         return a1;
     }
 
+    public void setA1(double a1) {
+        this.a1 = a1;
+    }
+    
     public void setA1(int a1) {
         this.a1 = a1;
     }

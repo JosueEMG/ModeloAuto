@@ -30,13 +30,9 @@ public class Carro extends Thread{
 
     }
     
-    public static double posicion(int x, int v, int a, double t) {
+    public static double posicion(double x, double v, double a, double t) {
         return x + v*t + (a*t*t)/2;
     }
-    
-    /*public static double tiempo(int xa, int va, int aa,int xb, int vb, int ab) {
-        return (-1*(va+vb)+Math.sqrt(((va+vb)*(va+vb))-(2*((aa+ab)*(xa-xb)))))/(aa+ab);
-    }*/
     
     @Override
     public void run(){
@@ -50,8 +46,8 @@ public class Carro extends Thread{
                 x = c.getCarro().getLocation().x;
                 x1 = c.getCarro1().getLocation().x;
                 tiempo++;
-                carro.setLocation(x + ((int)posicion(x, Integer.parseInt(c.getTxtVel().getText()), Integer.parseInt(c.getTxtAce().getText()), tiempo)/1000), carro.getLocation().y);
-                carro1.setLocation(x1-((int)posicion(x1, Integer.parseInt(c.getTxtVel().getText()), Integer.parseInt(c.getTxtAce1().getText()), tiempo)/1000), carro.getLocation().y);  
+                carro.setLocation(x + ((int)posicion(x, Double.parseDouble(c.getTxtVel().getText()), Double.parseDouble(c.getTxtAce().getText()), tiempo)/1000), carro.getLocation().y);
+                carro1.setLocation(x1-((int)posicion(x1, Double.parseDouble(c.getTxtVel().getText()), Double.parseDouble(c.getTxtAce1().getText()), tiempo)/1000), carro.getLocation().y);  
                 c.repaint(); 
                 if(x>=x1-100){
                     break;
@@ -59,7 +55,7 @@ public class Carro extends Thread{
             }
             c.botonesFinal();
             JOptionPane.showMessageDialog(null, "Los coches chocaron :(");
-            Coche coche = new Coche(Integer.parseInt(c.getTxtPos().getText()),Integer.parseInt(c.getTxtPos1().getText()), Integer.parseInt(c.getTxtVel().getText()), Integer.parseInt(c.getTxtVel1().getText()), Integer.parseInt(c.getTxtAce().getText()), Integer.parseInt(c.getTxtAce1().getText()));
+            Coche coche = new Coche(Double.parseDouble(c.getTxtPos().getText()),Double.parseDouble(c.getTxtPos1().getText()), Double.parseDouble(c.getTxtVel().getText()), Double.parseDouble(c.getTxtVel1().getText()), Double.parseDouble(c.getTxtAce().getText()), Double.parseDouble(c.getTxtAce1().getText()));
             c.añadir(coche);
             c.listar();
             } catch (Exception e) {
