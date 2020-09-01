@@ -17,7 +17,7 @@ import controlador.CocheController;
  * @author Josue Emmanuel Medina Garcia
  */
 public class Carro extends Thread{
-    
+    boolean estado = true;
     private frmCarro c; 
     private JLabel carro;
     private JLabel carro1;
@@ -34,13 +34,17 @@ public class Carro extends Thread{
         return x + v*t + (a*t*t)/2;
     }
     
+    public void parar(){
+        estado = false;
+    }
+    
     @Override
     public void run(){
         int x = 0;
         int x1 = 0;
         int tiempo = 0;
         try {
-            while (true) { 
+            while (estado) { 
                 
                 sleep(10); 
                 x = c.getCarro().getLocation().x;
@@ -50,7 +54,7 @@ public class Carro extends Thread{
                 carro1.setLocation(x1-((int)posicion(x1, Double.parseDouble(c.getTxtVel().getText()), Double.parseDouble(c.getTxtAce1().getText()), tiempo)/1000), carro.getLocation().y);  
                 c.repaint(); 
                 if(x>=x1-100){
-                    break;
+                    estado=false;
                 }
             }
             c.botonesFinal();
