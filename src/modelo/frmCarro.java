@@ -393,7 +393,7 @@ public class frmCarro extends javax.swing.JFrame {
         btnIniciar.setEnabled(true);
     }
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-        //try {
+        try {
             if(Double.parseDouble(txtAce.getText())<=0 || Double.parseDouble(txtAce1.getText())<=0){
                 JOptionPane.showMessageDialog(null, "Ingrese aceleracion mayor a 0");
             }
@@ -405,9 +405,9 @@ public class frmCarro extends javax.swing.JFrame {
                 c = new Carro(this, carro, carro1);
                 c.start();
             }
-        /*} catch (Exception e) {
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ingrese valores a todos los campos");
-        }*/
+        }
         
         
     }//GEN-LAST:event_btnIniciarActionPerformed
