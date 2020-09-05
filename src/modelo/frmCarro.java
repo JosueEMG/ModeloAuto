@@ -53,8 +53,7 @@ public class frmCarro extends javax.swing.JFrame {
             dt.addRow(v);
             dt1.addRow(v1);
             tiempoEncuentro.setText(""+Math.round(c.tiempoEncuentro()*100.0)/100.0+" Segundos");
-        }
-        
+        }  
     }
     
     
